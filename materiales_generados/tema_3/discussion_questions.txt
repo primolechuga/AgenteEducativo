@@ -1,0 +1,49 @@
+¡Excelente! Aquí tienes un conjunto de preguntas para discusión diseñadas para fomentar el pensamiento crítico y el análisis profundo sobre Machine Learning Básico (Regresión Lineal, Árboles de Decisión, Clustering), junto con notas para el instructor:
+
+**I. Regresión Lineal**
+
+1.  **Pregunta:** En situaciones del mundo real, ¿cuáles son las limitaciones más significativas de la regresión lineal y cómo podríamos abordarlas? Consideren escenarios donde la relación entre las variables no es lineal o donde existen valores atípicos significativos.
+
+    *   **Nota para el Instructor:** Esta pregunta busca que los estudiantes identifiquen los supuestos de la regresión lineal (linealidad, independencia de errores, homocedasticidad, normalidad) y exploren qué sucede cuando estos supuestos no se cumplen.  Fomente la discusión sobre transformaciones de variables, regresión polinómica, regresión robusta y el uso de algoritmos más complejos cuando la regresión lineal es inadecuada.  Anímelos a pensar en ejemplos concretos (e.g., predecir el precio de una casa en un mercado inmobiliario con propiedades de lujo que distorsionan la relación).
+
+2.  **Pregunta:** ¿Cómo la multicolinealidad afecta la interpretación de los coeficientes en un modelo de regresión lineal? ¿Qué estrategias podemos emplear para detectar y mitigar este problema?  ¿Cómo impacta la multicolinealidad en la capacidad predictiva del modelo?
+
+    *   **Nota para el Instructor:**  Asegúrese de que los estudiantes comprendan que la multicolinealidad no necesariamente afecta la precisión de las predicciones, pero sí dificulta la interpretación de la importancia relativa de cada variable.  Discuta el uso del Factor de Inflación de la Varianza (VIF), la eliminación de variables redundantes, la recolección de más datos, y técnicas de regularización (Ridge, Lasso) como posibles soluciones.
+
+3.  **Pregunta:**  Considerando un conjunto de datos con alta dimensionalidad (muchas variables), ¿cuáles son los riesgos de sobreajuste (overfitting) al usar regresión lineal? ¿Cómo podemos utilizar técnicas de regularización (L1/Lasso, L2/Ridge) para prevenir el sobreajuste y mejorar la generalización del modelo? ¿En qué se diferencian L1 y L2 y cuándo es más apropiado usar una u otra?
+
+    *   **Nota para el Instructor:**  Esta pregunta profundiza en la conexión entre complejidad del modelo y generalización.  Explique la intuición detrás de las penalizaciones L1 y L2 (Lasso tiende a seleccionar variables, Ridge tiende a reducir la magnitud de los coeficientes). Discuta cómo la selección del parámetro de regularización (lambda/alpha) afecta el rendimiento del modelo y la necesidad de utilizar técnicas de validación cruzada para encontrar el valor óptimo.
+
+**II. Árboles de Decisión**
+
+1.  **Pregunta:**  Los árboles de decisión son inherentemente propensos al sobreajuste, especialmente cuando crecen muy profundos.  ¿Qué estrategias podemos emplear para controlar la complejidad de un árbol de decisión y evitar el sobreajuste? ¿Cómo el costo computacional influye en la elección de estos métodos?
+
+    *   **Nota para el Instructor:**  Concentre la discusión en técnicas de pre-poda (establecer límites en la profundidad máxima, el número mínimo de muestras por nodo, etc.) y post-poda (podar el árbol después de haber sido construido).  Explore el concepto de complejidad del árbol y su relación con el rendimiento en datos no vistos. Mencione cómo la validación cruzada puede ayudar a determinar los parámetros óptimos para la poda.
+
+2.  **Pregunta:**  ¿Cuáles son las ventajas y desventajas de los árboles de decisión en comparación con la regresión lineal? Consideren factores como la interpretabilidad, la capacidad de manejar datos no lineales y la sensibilidad a los valores atípicos. ¿En qué tipo de problemas un árbol de decisión sería una mejor opción que la regresión lineal y viceversa?
+
+    *   **Nota para el Instructor:**  Esta pregunta busca que los estudiantes comparen y contrasten los dos algoritmos.  Resalte la interpretabilidad de los árboles (fácil de visualizar las reglas de decisión), su capacidad para modelar relaciones no lineales sin necesidad de transformaciones, pero también su inestabilidad (pequeños cambios en los datos pueden generar árboles muy diferentes).  Guíe la discusión hacia la idea de que la elección del algoritmo depende del problema específico y las características de los datos.
+
+3.  **Pregunta:**  ¿Cómo funcionan los métodos de ensamble basados en árboles de decisión, como Random Forest y Gradient Boosting? ¿Qué ventajas ofrecen estos métodos sobre un solo árbol de decisión?  ¿Cuáles son las consideraciones clave al ajustar los hiperparámetros de Random Forest y Gradient Boosting para obtener el mejor rendimiento?
+
+    *   **Nota para el Instructor:**  Explique la idea de "wisdom of the crowd" y cómo los ensembles combinan múltiples modelos para reducir la varianza (Random Forest) o el sesgo (Gradient Boosting).  Discuta conceptos como bagging (Random Forest) y boosting (Gradient Boosting).  Haga hincapié en la importancia de la validación cruzada para optimizar los hiperparámetros (número de árboles, profundidad máxima, tasa de aprendizaje, etc.).
+
+**III. Clustering**
+
+1.  **Pregunta:**  El algoritmo K-Means es sensible a la inicialización de los centroides. ¿Cómo podemos mitigar este problema? ¿Qué implicaciones tiene la elección de una métrica de distancia inadecuada para el resultado del clustering?
+
+    *   **Nota para el Instructor:**  Discuta el algoritmo K-Means++ como una forma de inicializar los centroides de manera más inteligente.  Resalte la importancia de elegir una métrica de distancia apropiada para el tipo de datos (Euclídea, Manhattan, coseno, etc.) y cómo una métrica incorrecta puede llevar a agrupaciones sin sentido.  Mencione la necesidad de normalizar o estandarizar los datos antes de aplicar K-Means para evitar que las variables con mayor escala dominen el proceso de clustering.
+
+2.  **Pregunta:**  ¿Cómo podemos determinar el número óptimo de clusters (K) en el algoritmo K-Means?  ¿Cuáles son las limitaciones de los métodos del "codo" (Elbow Method) y del "silueta" (Silhouette Score)? ¿Existen otros métodos para determinar el número óptimo de clusters?
+
+    *   **Nota para el Instructor:**  Explique los métodos del "codo" y del "silueta" y sus limitaciones (subjetividad, dificultad para identificar un codo claro, sensibilidad a la forma de los clusters).  Introduzca otros métodos como el Gap Statistic o el análisis de la estabilidad del clustering.  Enfatice que la elección del número óptimo de clusters a menudo depende del contexto del problema y del conocimiento del dominio.
+
+3.  **Pregunta:**  Compara y contrasta K-Means con otros algoritmos de clustering, como el clustering jerárquico (hierarchical clustering) y DBSCAN. ¿En qué tipo de situaciones es más apropiado utilizar cada uno de estos algoritmos? ¿Cuáles son las ventajas y desventajas de cada uno en términos de complejidad computacional, interpretabilidad y capacidad para manejar datos con formas complejas o ruido?
+
+    *   **Nota para el Instructor:**  Esta pregunta busca que los estudiantes comprendan las fortalezas y debilidades de diferentes algoritmos de clustering.  Resalte la capacidad del clustering jerárquico para crear una jerarquía de clusters y su utilidad para explorar diferentes niveles de granularidad.  Explique cómo DBSCAN puede identificar clusters de formas arbitrarias y manejar ruido, pero requiere ajustar parámetros como el radio de vecindad (epsilon) y el número mínimo de puntos por cluster.  Discuta la complejidad computacional de cada algoritmo y su escalabilidad a grandes conjuntos de datos.
+
+4.  **Pregunta (Implicaciones Éticas/Sociales):**  Considerando las aplicaciones del clustering en la segmentación de clientes, ¿qué consideraciones éticas debemos tener en cuenta para evitar la discriminación o el tratamiento injusto de ciertos grupos de personas?  ¿Cómo podemos garantizar que los algoritmos de clustering no perpetúen o amplifiquen sesgos existentes en los datos?
+
+    *   **Nota para el Instructor:**  Esta pregunta es crucial para abordar las implicaciones éticas del Machine Learning.  Fomente la discusión sobre la necesidad de auditar los datos y los algoritmos para detectar y mitigar sesgos.  Explore conceptos como la equidad algorítmica y la transparencia en el diseño y la implementación de sistemas de clustering.  Analice ejemplos concretos de cómo el clustering puede utilizarse de manera discriminatoria (e.g., segmentación de clientes para publicidad dirigida basada en características protegidas como raza o género).
+
+Estas preguntas están diseñadas para estimular el pensamiento crítico y la discusión en profundidad sobre los fundamentos del Machine Learning.  ¡Espero que sean útiles!

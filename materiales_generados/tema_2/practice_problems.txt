@@ -1,0 +1,213 @@
+¡Excelente! Aquí tienes un conjunto de problemas de práctica sobre algoritmos de búsqueda, diseñados para cubrir los temas de búsqueda no informada, búsqueda heurística, A* y optimización con algoritmos genéticos, con diferentes niveles de dificultad y soluciones detalladas.
+
+**Curso:** Algoritmos y Estructuras de Datos (o un curso equivalente de nivel universitario)
+
+**Tema:** Algoritmos de Búsqueda
+
+**Problemas de Práctica con Soluciones Paso a Paso**
+
+**I. Búsqueda No Informada**
+
+**Problema 1 (Básico):**
+
+*   **Enunciado:** Considera un grafo no dirigido representado por la siguiente lista de adyacencia:
+    *   A: [B, C]
+    *   B: [A, D, E]
+    *   C: [A, F]
+    *   D: [B]
+    *   E: [B, F]
+    *   F: [C, E]
+
+    Aplica la búsqueda en anchura (BFS) para encontrar el camino desde el nodo A hasta el nodo F. Muestra el orden en que se expanden los nodos y el camino resultante.
+
+*   **Solución:**
+
+    1.  **Inicialización:**
+        *   Cola: [A]
+        *   Visitados: {A}
+        *   Padre: {A: None}
+
+    2.  **Iteración 1:**
+        *   Desencolar: A
+        *   Vecinos de A: B, C
+        *   B no está en Visitados: Encolar B, Visitados = {A, B}, Padre = {A: None, B: A}
+        *   C no está en Visitados: Encolar C, Visitados = {A, B, C}, Padre = {A: None, B: A, C: A}
+        *   Cola: [B, C]
+
+    3.  **Iteración 2:**
+        *   Desencolar: B
+        *   Vecinos de B: A, D, E
+        *   A está en Visitados (ignorar)
+        *   D no está en Visitados: Encolar D, Visitados = {A, B, C, D}, Padre = {A: None, B: A, C: A, D: B}
+        *   E no está en Visitados: Encolar E, Visitados = {A, B, C, D, E}, Padre = {A: None, B: A, C: A, D: B, E: B}
+        *   Cola: [C, D, E]
+
+    4.  **Iteración 3:**
+        *   Desencolar: C
+        *   Vecinos de C: A, F
+        *   A está en Visitados (ignorar)
+        *   F no está en Visitados: Encolar F, Visitados = {A, B, C, D, E, F}, Padre = {A: None, B: A, C: A, D: B, E: B, F: C}
+        *   Cola: [D, E, F]
+
+    5.  **Iteración 4:**
+        *   Desencolar: D
+        *   Vecinos de D: B
+        *   B está en Visitados (ignorar)
+        *   Cola: [E, F]
+
+    6.  **Iteración 5:**
+        *   Desencolar: E
+        *   Vecinos de E: B, F
+        *   B está en Visitados (ignorar)
+        *   F está en Visitados (ignorar)
+        *   Cola: [F]
+
+    7.  **Iteración 6:**
+        *   Desencolar: F
+        *   F es el objetivo. ¡Éxito!
+
+    8.  **Reconstrucción del camino:** F <- C <- A.  Por lo tanto, el camino es A -> C -> F.
+
+**Problema 2 (Intermedio):**
+
+*   **Enunciado:**  Implementa la búsqueda en profundidad (DFS) iterativa para el mismo grafo del problema 1, comenzando en A y buscando F.  Muestra el orden en que se expanden los nodos y el camino resultante.
+
+*   **Solución:**
+
+    1.  **Inicialización:**
+        *   Pila: [A]
+        *   Visitados: {A}
+        *   Padre: {A: None}
+
+    2.  **Iteración 1:**
+        *   Desapilar: A
+        *   Vecinos de A: B, C
+        *   C no está en Visitados: Apilar C, Visitados = {A, C}, Padre = {A: None, C: A}
+        *   B no está en Visitados: Apilar B, Visitados = {A, C, B}, Padre = {A: None, C: A, B: A}
+        *   Pila: [B, C]
+
+    3.  **Iteración 2:**
+        *   Desapilar: C
+        *   Vecinos de C: A, F
+        *   F no está en Visitados: Apilar F, Visitados = {A, C, B, F}, Padre = {A: None, C: A, B: A, F: C}
+        *   Pila: [F, B]
+
+    4.  **Iteración 3:**
+        *   Desapilar: F
+        *   F es el objetivo. ¡Éxito!
+
+    5.  **Reconstrucción del camino:** F <- C <- A.  Por lo tanto, el camino es A -> C -> F.
+
+**II. Búsqueda Heurística (Greedy Best-First Search)**
+
+**Problema 3 (Intermedio):**
+
+*   **Enunciado:**  Considera el siguiente grafo con heurísticas (distancia en línea recta hasta el objetivo G):
+
+    *   A: h(A) = 10, Vecinos: B(6), C(4)
+    *   B: h(B) = 6, Vecinos: A(6), D(2), E(7)
+    *   C: h(C) = 4, Vecinos: A(4), F(5)
+    *   D: h(D) = 2, Vecinos: B(2), G(0)
+    *   E: h(E) = 7, Vecinos: B(7)
+    *   F: h(F) = 5, Vecinos: C(5)
+    *   G: h(G) = 0, Vecinos: D(0)
+
+    Aplica la búsqueda "greedy best-first" para encontrar el camino desde A hasta G. Muestra el orden en que se expanden los nodos y el camino resultante.
+
+*   **Solución:**
+
+    1.  **Inicialización:**
+        *   Cola de prioridad (nodo, heurística): [(A, 10)]
+        *   Visitados: {}
+        *   Padre: {}
+
+    2.  **Iteración 1:**
+        *   Desencolar: (A, 10)
+        *   Visitados: {A}
+        *   Vecinos de A: B(6), C(4)
+        *   Encolar: (B, 6), (C, 4)
+        *   Cola de prioridad: [(C, 4), (B, 6)]
+        *   Padre: {B: A, C: A}
+
+    3.  **Iteración 2:**
+        *   Desencolar: (C, 4)
+        *   Visitados: {A, C}
+        *   Vecinos de C: A(4), F(5)
+        *   A está en Visitados (ignorar)
+        *   Encolar: (F, 5)
+        *   Cola de prioridad: [(F, 5), (B, 6)]
+        *   Padre: {B: A, C: A, F: C}
+
+    4.  **Iteración 3:**
+        *   Desencolar: (F, 5)
+        *   Visitados: {A, C, F}
+        *   Vecinos de F: C(5)
+        *   C está en Visitados (ignorar)
+        *   Cola de prioridad: [(B, 6)]
+
+    5.  **Iteración 4:**
+        *   Desencolar: (B, 6)
+        *   Visitados: {A, C, F, B}
+        *   Vecinos de B: A(6), D(2), E(7)
+        *   A está en Visitados (ignorar)
+        *   Encolar: (D, 2), (E, 7)
+        *   Cola de prioridad: [(D, 2), (E, 7)]
+        *   Padre: {B: A, C: A, F: C, D: B, E: B}
+
+    6.  **Iteración 5:**
+        *   Desencolar: (D, 2)
+        *   Visitados: {A, C, F, B, D}
+        *   Vecinos de D: B(2), G(0)
+        *   B está en Visitados (ignorar)
+        *   Encolar: (G, 0)
+        *   Cola de prioridad: [(G, 0), (E, 7)]
+        *   Padre: {B: A, C: A, F: C, D: B, E: B, G: D}
+
+    7.  **Iteración 6:**
+        *   Desencolar: (G, 0)
+        *   G es el objetivo. ¡Éxito!
+
+    8.  **Reconstrucción del camino:** G <- D <- B <- A.  Por lo tanto, el camino es A -> B -> D -> G.
+
+**III. Algoritmo A***
+
+**Problema 4 (Avanzado):**
+
+*   **Enunciado:** Utiliza el mismo grafo y heurísticas del Problema 3. Aplica el algoritmo A* para encontrar el camino óptimo desde A hasta G.  Muestra el orden en que se expanden los nodos, la función de evaluación f(n) = g(n) + h(n) para cada nodo, y el camino resultante.  Asume que el costo de cada arista es igual a la distancia mostrada en el grafo (ej: el costo de A a B es 6).
+
+*   **Solución:**
+
+    1.  **Inicialización:**
+        *   Cola de prioridad (nodo, f(n)): [(A, 10)]  (g(A) = 0, h(A) = 10)
+        *   Visitados: {}
+        *   g_score: {A: 0}
+        *   Padre: {}
+
+    2.  **Iteración 1:**
+        *   Desencolar: (A, 10)
+        *   Visitados: {A}
+        *   Vecinos de A: B(6), C(4)
+        *   Para B: g(B) = g(A) + costo(A, B) = 0 + 6 = 6; h(B) = 6; f(B) = 6 + 6 = 12
+        *   Para C: g(C) = g(A) + costo(A, C) = 0 + 4 = 4; h(C) = 4; f(C) = 4 + 4 = 8
+        *   Encolar: (B, 12), (C, 8)
+        *   Cola de prioridad: [(C, 8), (B, 12)]
+        *   g_score: {A: 0, B: 6, C: 4}
+        *   Padre: {B: A, C: A}
+
+    3.  **Iteración 2:**
+        *   Desencolar: (C, 8)
+        *   Visitados: {A, C}
+        *   Vecinos de C: A(4), F(5)
+        *   A está en Visitados (ignorar)
+        *   Para F: g(F) = g(C) + costo(C, F) = 4 + 5 = 9; h(F) = 5; f(F) = 9 + 5 = 14
+        *   Encolar: (F, 14)
+        *   Cola de prioridad: [(B, 12), (F, 14)]
+        *   g_score: {A: 0, B: 6, C: 4, F: 9}
+        *   Padre: {B: A, C: A, F: C}
+
+    4.  **Iteración 3:**
+        *   Desencolar: (B, 12)
+        *   Visitados: {A, C, B}
+        *   Vecinos de B: A(6), D(2), E(7)
+        *   A está en Visitados (ignorar)
+        *

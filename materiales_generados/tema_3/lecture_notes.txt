@@ -1,0 +1,185 @@
+## Notas de Clase: Machine Learning Básico
+
+**Curso:** Introducción a la Inteligencia Artificial
+**Código:** [A completar por el usuario]
+**Tema:** Machine Learning Básico
+
+**Introducción:**
+
+El Machine Learning (ML), o Aprendizaje Automático, es una rama de la Inteligencia Artificial (IA) que se centra en el desarrollo de sistemas que pueden aprender de los datos sin ser explícitamente programados. En lugar de escribir código para resolver un problema específico, los algoritmos de ML aprenden patrones y relaciones a partir de los datos, permitiéndoles hacer predicciones o tomar decisiones sobre nuevos datos. Este enfoque ha revolucionado campos como la medicina, las finanzas, el marketing y la robótica, entre muchos otros.
+
+Estas notas de clase cubrirán tres algoritmos fundamentales de ML: Regresión Lineal, Árboles de Decisión y Clustering. Entender estos algoritmos proporciona una base sólida para explorar técnicas de ML más avanzadas.
+
+**I. Regresión Lineal:**
+
+**A. Definición:**
+
+La Regresión Lineal es un algoritmo de aprendizaje supervisado que se utiliza para predecir una variable dependiente continua (la variable que queremos predecir) basándose en una o más variables independientes (las variables que utilizamos para hacer la predicción). El objetivo es encontrar la mejor línea recta (o hiperplano en dimensiones superiores) que mejor se ajuste a los datos, minimizando la diferencia entre los valores predichos y los valores reales.
+
+**B. Tipos de Regresión Lineal:**
+
+*   **Regresión Lineal Simple:** Involucra una sola variable independiente. La ecuación de la línea es:
+
+    `y = mx + b`
+
+    Donde:
+
+    *   `y` es la variable dependiente (la que queremos predecir).
+    *   `x` es la variable independiente.
+    *   `m` es la pendiente de la línea (el cambio en `y` por cada unidad de cambio en `x`).
+    *   `b` es la intersección con el eje y (el valor de `y` cuando `x` es 0).
+
+*   **Regresión Lineal Múltiple:** Involucra dos o más variables independientes. La ecuación general es:
+
+    `y = b0 + b1*x1 + b2*x2 + ... + bn*xn`
+
+    Donde:
+
+    *   `y` es la variable dependiente.
+    *   `x1, x2, ..., xn` son las variables independientes.
+    *   `b0` es la intersección con el eje y.
+    *   `b1, b2, ..., bn` son los coeficientes para cada variable independiente.
+
+**C. Proceso de Aprendizaje:**
+
+El proceso de aprendizaje en la regresión lineal implica encontrar los valores óptimos para los coeficientes (`m` y `b` en la regresión simple, o `b0, b1, ..., bn` en la regresión múltiple) que minimicen una función de costo. La función de costo más común es el Error Cuadrático Medio (MSE):
+
+`MSE = (1/n) * Σ(yi - ŷi)^2`
+
+Donde:
+
+*   `n` es el número de datos.
+*   `yi` es el valor real de la variable dependiente para el dato `i`.
+*   `ŷi` es el valor predicho por el modelo para el dato `i`.
+*   `Σ` denota la sumatoria de todos los datos.
+
+El objetivo es minimizar este MSE, lo cual se logra a través de técnicas como el Descenso del Gradiente (Gradient Descent).
+
+**D. Ejemplo Práctico:**
+
+Imaginemos que queremos predecir el precio de una casa (`y`) basándonos en su tamaño en metros cuadrados (`x`). Tenemos los siguientes datos:
+
+| Tamaño (m²) | Precio ($) |
+|---|---|
+| 100 | 200000 |
+| 150 | 300000 |
+| 200 | 400000 |
+| 250 | 500000 |
+
+Podemos usar la regresión lineal simple para encontrar la línea que mejor se ajuste a estos datos. Después de aplicar un algoritmo de regresión lineal (por ejemplo, usando una librería como scikit-learn en Python), podríamos obtener una ecuación como:
+
+`Precio = 2000 * Tamaño + 0`
+
+Esto significa que por cada metro cuadrado adicional, el precio de la casa aumenta en $2000.
+
+**E. Casos de Aplicación:**
+
+*   **Predicción de ventas:** Predecir las ventas futuras basándose en datos históricos de marketing y ventas.
+*   **Análisis financiero:** Predecir precios de acciones o tasas de interés.
+*   **Estimación de costos:** Estimar los costos de proyectos basándose en factores como el tiempo y los recursos.
+*   **Análisis de riesgo:** Predecir la probabilidad de que un cliente incumpla un préstamo.
+
+**II. Árboles de Decisión:**
+
+**A. Definición:**
+
+Un Árbol de Decisión es un algoritmo de aprendizaje supervisado que se utiliza tanto para problemas de clasificación como de regresión. Funciona particionando el espacio de datos en regiones más pequeñas y homogéneas, basándose en una serie de reglas de decisión.  La estructura de un árbol de decisión es jerárquica, con un nodo raíz, nodos internos (nodos de decisión) y nodos hoja (nodos terminales).
+
+**B. Componentes de un Árbol de Decisión:**
+
+*   **Nodo Raíz:** El nodo inicial del árbol, que representa el conjunto de datos completo.
+*   **Nodos Internos (Nodos de Decisión):** Representan una prueba sobre un atributo (variable independiente). Cada nodo interno tiene ramas que representan los posibles resultados de la prueba.
+*   **Ramas:** Conectan los nodos y representan el resultado de una prueba.
+*   **Nodos Hoja (Nodos Terminales):** Representan la predicción final (la clase o el valor predicho).
+
+**C. Proceso de Construcción del Árbol:**
+
+El proceso de construcción de un árbol de decisión implica seleccionar el mejor atributo para dividir los datos en cada nodo. La "mejor" división se determina utilizando métricas como:
+
+*   **Entropía e Ganancia de Información (para clasificación):** La entropía mide la impureza de un conjunto de datos. La ganancia de información mide la reducción de la entropía después de dividir los datos en un atributo. El algoritmo elige el atributo que maximiza la ganancia de información.
+*   **Error Cuadrático Medio (MSE) (para regresión):**  Como en la regresión lineal, se busca minimizar la diferencia entre los valores predichos y los valores reales.
+
+El proceso se repite recursivamente para cada subconjunto de datos hasta que se cumple una condición de parada, como:
+
+*   Todos los ejemplos en un nodo pertenecen a la misma clase (en clasificación).
+*   Se alcanza una profundidad máxima predefinida del árbol.
+*   El número de ejemplos en un nodo es menor que un umbral.
+
+**D. Ejemplo Práctico:**
+
+Imaginemos que queremos predecir si un cliente comprará un producto basándonos en su edad y sus ingresos. Tenemos los siguientes datos:
+
+| Edad | Ingresos ($) | Compra (Sí/No) |
+|---|---|---|
+| 25 | 30000 | No |
+| 30 | 50000 | Sí |
+| 35 | 40000 | Sí |
+| 40 | 60000 | Sí |
+| 45 | 20000 | No |
+| 50 | 70000 | Sí |
+
+Un árbol de decisión podría verse así:
+
+```
+¿Ingresos > $45000?
+|   Sí:
+|   |   ¿Edad > 35?
+|   |   |   Sí: Compra = Sí
+|   |   |   No: Compra = Sí
+|   No:
+|   |   Compra = No
+```
+
+Este árbol indica que si los ingresos son mayores a $45000, el cliente probablemente comprará el producto. Si los ingresos son menores, el cliente no lo comprará. Si los ingresos son mayores a $45000, se evalúa la edad; si la edad es mayor a 35, el cliente comprará el producto, y si no, también lo comprará.
+
+**E. Casos de Aplicación:**
+
+*   **Diagnóstico médico:** Diagnosticar enfermedades basándose en síntomas y resultados de pruebas.
+*   **Análisis de riesgo crediticio:** Evaluar el riesgo de conceder un préstamo a un solicitante.
+*   **Segmentación de clientes:** Dividir a los clientes en grupos basados en sus características.
+*   **Detección de fraudes:** Identificar transacciones fraudulentas.
+
+**III. Clustering:**
+
+**A. Definición:**
+
+El Clustering (o Agrupamiento) es un algoritmo de aprendizaje no supervisado que se utiliza para agrupar datos similares en grupos o "clusters" basándose en su similitud. A diferencia de la regresión lineal y los árboles de decisión, el clustering no requiere datos etiquetados. El objetivo es descubrir patrones y estructuras ocultas en los datos.
+
+**B. Tipos de Algoritmos de Clustering:**
+
+*   **K-Means:** Es uno de los algoritmos de clustering más populares.  Divide los datos en `k` clusters, donde `k` es un parámetro definido por el usuario. El algoritmo asigna cada dato al cluster cuyo centroide (la media de los datos en el cluster) está más cercano.
+
+*   **Clustering Jerárquico:** Construye una jerarquía de clusters. Puede ser aglomerativo (comienza con cada dato como un cluster individual y los fusiona iterativamente) o divisivo (comienza con todos los datos en un solo cluster y los divide iterativamente).
+
+*   **DBSCAN (Density-Based Spatial Clustering of Applications with Noise):** Agrupa los datos basándose en la densidad. Identifica clusters como regiones densas separadas por regiones menos densas.
+
+**C. K-Means en Detalle:**
+
+El algoritmo K-Means funciona de la siguiente manera:
+
+1.  **Inicialización:** Selecciona aleatoriamente `k` centroides iniciales.
+2.  **Asignación:** Asigna cada dato al cluster cuyo centroide está más cercano (usualmente usando la distancia euclidiana).
+3.  **Actualización:** Recalcula los centroides de cada cluster como la media de los datos asignados a ese cluster.
+4.  **Repetición:** Repite los pasos 2 y 3 hasta que los centroides ya no cambien significativamente o se alcance un número máximo de iteraciones.
+
+**D. Ejemplo Práctico:**
+
+Imaginemos que tenemos datos de clientes con información sobre sus gastos y sus ingresos. Queremos segmentar a los clientes en grupos basándonos en estos datos. Usando K-Means, podríamos encontrar tres clusters:
+
+*   **Cluster 1:** Clientes con bajos gastos y bajos ingresos.
+*   **Cluster 2:** Clientes con altos gastos y altos ingresos.
+*   **Cluster 3:** Clientes con gastos medios e ingresos medios.
+
+Esta segmentación puede ser útil para dirigir campañas de marketing específicas a cada grupo de clientes.
+
+**E. Casos de Aplicación:**
+
+*   **Segmentación de clientes:** Agrupar a los clientes para dirigir campañas de marketing más efectivas.
+*   **Análisis de imágenes:** Agrupar píxeles similares para identificar objetos en una imagen.
+*   **Detección de anomalías:** Identificar puntos de datos que son significativamente diferentes de los demás.
+*   **Recomendación de productos:** Recomendar productos a los usuarios basándose en las compras de usuarios similares.
+*   **Bioinformática:** Agrupar genes con patrones de expresión similares.
+
+**Conclusión:**
+
+Estos tres algoritmos (Regresión Lineal, Árboles de Decisión y Clustering) representan una base sólida en el campo del Machine Learning.  Cada uno aborda diferentes tipos de problemas y tiene sus propias fortalezas y debilidades. Comprender estos algoritmos es crucial para desarrollar soluciones de ML efectivas y para explorar técnicas más avanzadas. La elección del algoritmo adecuado depende del tipo de problema, la disponibilidad de datos etiquetados y los objetivos específicos del proyecto.

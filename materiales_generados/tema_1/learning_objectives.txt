@@ -1,0 +1,42 @@
+¡Excelente! Aquí te presento una propuesta de objetivos de aprendizaje SMART para el tema "Introducción a la IA", considerando los subtemas que mencionaste y utilizando la taxonomía de Bloom:
+
+**Tema: Introducción a la IA**
+
+**Objetivos Generales del Curso (Recordatorio):**
+
+*   Comprender los fundamentos teóricos de la IA.
+*   Aplicar algoritmos de búsqueda y optimización.
+*   Desarrollar modelos básicos de machine learning.
+*   Analizar casos de estudio de aplicaciones reales.
+*   Implementar soluciones simples de PLN.
+
+**Objetivos de Aprendizaje SMART:**
+
+**1. Historia de la IA (Conocimiento, Comprensión):**
+
+*   **Objetivo:**  En la primera semana, los estudiantes serán capaces de **identificar** al menos cinco figuras clave en la historia de la IA y **describir** sus contribuciones fundamentales (ej., Turing, McCarthy, Minsky) con una precisión del 80% en un cuestionario. (Conocimiento)
+*   **Objetivo:** Antes de finalizar la semana 1, los estudiantes podrán **explicar** las diferentes etapas del desarrollo de la IA (ej., nacimiento, invierno de la IA, resurgimiento) y **comparar** sus características principales, demostrando una comprensión clara de las fluctuaciones en el campo, en un breve ensayo de 500 palabras con una rúbrica específica. (Comprensión)
+
+**2. Agentes Inteligentes (Comprensión, Aplicación):**
+
+*   **Objetivo:** Al finalizar la segunda semana, los estudiantes podrán **definir** el concepto de agente inteligente y **clasificar** diferentes tipos de agentes (ej., reactivos, deliberativos, basados en utilidad) según su arquitectura y comportamiento, presentando una justificación clara para cada clasificación en un foro de discusión en línea. (Comprensión)
+*   **Objetivo:** En la segunda semana, los estudiantes **aplicarán** el concepto de racionalidad para **diseñar** un agente simple que resuelva un problema específico (ej., aspiradora en un entorno definido) y **justificar** sus decisiones de diseño en un informe corto, demostrando una comprensión práctica de los principios de diseño de agentes inteligentes. (Aplicación)
+
+**3. Entornos y Tareas (Análisis, Aplicación):**
+
+*   **Objetivo:** Durante la tercera semana, los estudiantes **analizarán** las características de diferentes entornos (ej., totalmente observables vs. parcialmente observables, deterministas vs. estocásticos) y su impacto en el diseño de agentes, **comparando** al menos tres tipos de entornos en una tabla comparativa con criterios bien definidos. (Análisis)
+*   **Objetivo:** Al finalizar la tercera semana, los estudiantes **aplicarán** sus conocimientos sobre entornos y tareas para **seleccionar** el tipo de agente más adecuado para resolver un problema específico, **justificando** su elección basándose en las características del entorno y los requisitos de la tarea en una presentación oral breve. (Aplicación)
+
+**4. Ética en IA (Análisis, Evaluación):**
+
+*   **Objetivo:** En la cuarta semana, los estudiantes **analizarán** al menos tres dilemas éticos relacionados con la IA (ej., sesgo algorítmico, privacidad, autonomía de las máquinas) y **evaluarán** los posibles impactos sociales y económicos de cada dilema en un debate estructurado en clase. (Análisis, Evaluación)
+*   **Objetivo:** Para finalizar el módulo, los estudiantes **evaluarán** críticamente diferentes enfoques para abordar los desafíos éticos en la IA (ej., transparencia, responsabilidad, explicabilidad) y **propondrán** recomendaciones para un desarrollo y uso ético de la IA en un ensayo reflexivo de 750 palabras. (Evaluación)
+
+**Consideraciones Adicionales:**
+
+*   **Alineación con Objetivos Generales:**  Estos objetivos específicos contribuyen directamente a los objetivos generales del curso al proporcionar una base sólida en los fundamentos teóricos de la IA y al introducir conceptos clave que se utilizarán en módulos posteriores (ej., diseño de agentes para búsqueda y optimización, consideración de entornos en machine learning).
+*   **Claridad y Comprensibilidad:**  Los objetivos están redactados en un lenguaje claro y accesible, utilizando verbos de acción específicos y proporcionando ejemplos concretos para facilitar la comprensión por parte de los estudiantes.
+*   **Medición:**  Cada objetivo incluye un criterio de evaluación específico (ej., cuestionario con precisión del 80%, ensayo con rúbrica, presentación oral) que permite medir el logro del objetivo por parte de los estudiantes.
+*   **Relevancia:** Los temas son relevantes para la comprensión de la IA en el mundo actual.
+
+Espero que esta propuesta sea útil. ¡Avísame si necesitas alguna modificación o adaptación!

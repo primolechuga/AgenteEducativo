@@ -1,0 +1,141 @@
+¡Excelente! Aquí tienes unas notas de clase detalladas sobre Algoritmos de Búsqueda, diseñadas para un curso universitario introductorio a la Inteligencia Artificial:
+
+**Notas de Clase: Algoritmos de Búsqueda**
+
+**Curso:** Introducción a la Inteligencia Artificial
+**Código:** (Dejar espacio para el código del curso)
+**Tema:** Algoritmos de Búsqueda
+
+**Introducción**
+
+La búsqueda es una tarea fundamental en la Inteligencia Artificial (IA).  Muchos problemas en IA pueden ser formulados como la búsqueda de una solución dentro de un espacio de posibles soluciones. Un algoritmo de búsqueda es un procedimiento sistemático para explorar este espacio, con el objetivo de encontrar una solución que satisfaga ciertos criterios.
+
+**1. Búsqueda No Informada (Búsqueda a Ciegas)**
+
+La búsqueda no informada, también conocida como búsqueda a ciegas, no utiliza información específica sobre el problema más allá de la definición del problema en sí.  Estos algoritmos exploran el espacio de búsqueda de manera sistemática, pero sin una guía que les indique qué caminos son más prometedores.
+
+*   **Definición:** Algoritmos que exploran el espacio de búsqueda sin utilizar conocimiento heurístico o información adicional sobre el problema.
+
+*   **Tipos Principales:**
+
+    *   **Búsqueda en Anchura (Breadth-First Search - BFS):**
+        *   **Descripción:** Explora el espacio de búsqueda nivel por nivel. Primero, examina todos los nodos a una distancia de un paso del nodo inicial, luego todos los nodos a dos pasos, y así sucesivamente.
+        *   **Implementación:** Utiliza una cola (FIFO - First In, First Out) para gestionar los nodos a explorar.
+        *   **Ventajas:** Completa (si existe una solución, la encuentra) y óptima (encuentra la solución más corta en términos de número de pasos) si el costo de cada paso es el mismo.
+        *   **Desventajas:** Puede ser muy costosa en términos de memoria, ya que debe almacenar todos los nodos de cada nivel.
+        *   **Ejemplo:** Encontrar el camino más corto en un grafo donde todas las aristas tienen el mismo peso.  Imagina buscar a un amigo en una red social. BFS exploraría primero a todos tus amigos directos, luego a los amigos de tus amigos, y así sucesivamente.
+
+    *   **Búsqueda en Profundidad (Depth-First Search - DFS):**
+        *   **Descripción:** Explora el espacio de búsqueda profundizando lo más posible a lo largo de cada rama antes de retroceder (backtracking).
+        *   **Implementación:** Utiliza una pila (LIFO - Last In, First Out) o recursión para gestionar los nodos a explorar.
+        *   **Ventajas:** Requiere menos memoria que BFS, ya que solo necesita almacenar el camino actual.
+        *   **Desventajas:** No es completa (puede quedar atrapada en un camino infinito) ni óptima (puede encontrar una solución subóptima antes de la óptima).
+        *   **Ejemplo:** Resolver un laberinto.  DFS intentaría seguir un camino hasta el final, y si llega a un callejón sin salida, retrocede para probar otro camino.
+
+    *   **Búsqueda de Costo Uniforme (Uniform-Cost Search):**
+        *   **Descripción:** Similar a BFS, pero en lugar de expandir el nodo más superficial, expande el nodo con el menor costo acumulado desde el nodo inicial.
+        *   **Implementación:** Utiliza una cola de prioridad, donde la prioridad es el costo del camino.
+        *   **Ventajas:** Completa y óptima (encuentra la solución de menor costo).
+        *   **Desventajas:** Puede ser costosa en términos de memoria y tiempo si hay muchos caminos de bajo costo.
+        *   **Ejemplo:** Encontrar la ruta más barata entre dos ciudades, donde cada carretera tiene un costo diferente.
+
+    *   **Búsqueda en Profundidad Limitada (Depth-Limited Search - DLS):**
+        *   **Descripción:**  Similar a DFS, pero con un límite en la profundidad máxima de la búsqueda.
+        *   **Ventajas:** Evita caminos infinitos.
+        *   **Desventajas:** No es completa si la profundidad límite es menor que la profundidad de la solución.
+        *   **Ejemplo:**  Buscar un archivo en un sistema de archivos sabiendo que no está más allá de cierta profundidad de directorios.
+
+    *   **Búsqueda en Profundidad Iterativa (Iterative Deepening Depth-First Search - IDDFS):**
+        *   **Descripción:**  Realiza una serie de búsquedas en profundidad limitada, incrementando el límite de profundidad en cada iteración.
+        *   **Ventajas:** Completa y óptima (si el costo de cada paso es el mismo), y utiliza menos memoria que BFS.
+        *   **Desventajas:**  Repite la expansión de algunos nodos en cada iteración, pero esto generalmente no es un problema significativo.
+        *   **Ejemplo:** Combina las ventajas de BFS y DFS.  Primero busca a profundidad 0, luego a profundidad 1, luego a profundidad 2, y así sucesivamente, hasta encontrar la solución.
+
+**2. Búsqueda Heurística (Búsqueda Informada)**
+
+La búsqueda heurística utiliza información específica del problema (heurística) para guiar la búsqueda hacia la solución. Una heurística es una función que estima el costo de alcanzar el objetivo desde un estado dado.
+
+*   **Definición:** Algoritmos que utilizan conocimiento heurístico para guiar la búsqueda y explorar las partes más prometedoras del espacio de búsqueda.
+
+*   **Función Heurística (h(n)):** Estima el costo del camino más barato desde el nodo *n* hasta el nodo objetivo.
+
+*   **Tipos Principales:**
+
+    *   **Búsqueda Voraz (Greedy Best-First Search):**
+        *   **Descripción:** Expande el nodo que parece estar más cerca del objetivo, según la función heurística *h(n)*.
+        *   **Implementación:** Utiliza una cola de prioridad, donde la prioridad es el valor de la función heurística.
+        *   **Ventajas:** Puede ser muy eficiente si la heurística es buena.
+        *   **Desventajas:** No es completa ni óptima.  Puede quedar atrapada en caminos subóptimos o bucles infinitos.
+        *   **Ejemplo:**  Navegación por GPS donde el algoritmo siempre elige la ruta que parece acortar más la distancia restante al destino, sin considerar el costo total del camino.
+
+**3. Algoritmo A***
+
+El algoritmo A* es uno de los algoritmos de búsqueda más utilizados en IA.  Combina la información del costo del camino recorrido hasta el momento (*g(n)*) con una estimación heurística del costo restante hasta el objetivo (*h(n)*) para evaluar qué nodo debe ser explorado a continuación.
+
+*   **Definición:** Un algoritmo de búsqueda informado que utiliza una función de evaluación *f(n) = g(n) + h(n)* para estimar el costo total del camino más barato a través del nodo *n*.
+
+*   **Componentes:**
+
+    *   *g(n)*: Costo del camino desde el nodo inicial hasta el nodo *n*.
+    *   *h(n)*: Estimación heurística del costo del camino más barato desde el nodo *n* hasta el nodo objetivo.
+    *   *f(n) = g(n) + h(n)*: Estimación del costo total del camino más barato desde el nodo inicial hasta el objetivo, pasando por el nodo *n*.
+
+*   **Implementación:** Utiliza una cola de prioridad, donde la prioridad es el valor de la función *f(n)*.
+
+*   **Admisibilidad de la Heurística:** Una heurística *h(n)* es admisible si nunca sobreestima el costo real de alcanzar el objetivo desde el nodo *n*.  Es decir, *h(n) ≤ h\*(n)*, donde *h\*(n)* es el costo real del camino más barato desde *n* hasta el objetivo.
+
+*   **Consistencia de la Heurística:** Una heurística *h(n)* es consistente (o monótona) si para cada nodo *n* y cada sucesor *n'* de *n* generado por la acción *a*, el costo estimado de alcanzar el objetivo desde *n* no es mayor que el costo de dar un paso desde *n* a *n'* más el costo estimado de alcanzar el objetivo desde *n'*.  Es decir, *h(n) ≤ c(n, a, n') + h(n')*, donde *c(n, a, n')* es el costo de la acción *a* que lleva de *n* a *n'*.
+
+*   **Ventajas:** Completo y óptimo si la heurística es admisible.  Es el algoritmo óptimo entre todos los algoritmos que utilizan la misma heurística.
+*   **Desventajas:** Puede ser costoso en términos de memoria, especialmente para problemas grandes.
+*   **Ejemplo:**  Navegación por GPS.  *g(n)* es la distancia ya recorrida, *h(n)* es la distancia en línea recta hasta el destino (heurística admisible), y *f(n)* es la estimación del costo total de la ruta.
+
+**4. Optimización con Algoritmos Genéticos**
+
+Los algoritmos genéticos (AGs) son técnicas de búsqueda inspiradas en la evolución biológica.  Son especialmente útiles para problemas de optimización complejos donde el espacio de búsqueda es grande y discontinuo.
+
+*   **Definición:** Algoritmos de búsqueda y optimización que imitan el proceso de selección natural para encontrar soluciones óptimas.
+
+*   **Componentes Principales:**
+
+    *   **Población:** Un conjunto de posibles soluciones (individuos o cromosomas).
+    *   **Función de Aptitud (Fitness Function):** Evalúa la calidad de cada individuo.
+    *   **Selección:** Elige a los individuos más aptos para reproducirse.  Los individuos con mayor aptitud tienen mayor probabilidad de ser seleccionados.
+    *   **Cruce (Crossover):** Combina el material genético de dos individuos padres para crear nuevos individuos hijos.
+    *   **Mutación:** Introduce cambios aleatorios en el material genético de un individuo hijo.
+
+*   **Proceso General:**
+
+    1.  **Inicialización:** Crea una población inicial de individuos aleatorios.
+    2.  **Evaluación:** Evalúa la aptitud de cada individuo en la población.
+    3.  **Selección:** Selecciona a los individuos más aptos para reproducirse.
+    4.  **Cruce:** Aplica el operador de cruce a los individuos seleccionados para crear nuevos hijos.
+    5.  **Mutación:** Aplica el operador de mutación a los hijos.
+    6.  **Reemplazo:** Reemplaza la población anterior con la nueva población de hijos.
+    7.  **Repetición:** Repite los pasos 2-6 hasta que se alcance un criterio de terminación (por ejemplo, un número máximo de generaciones o una solución suficientemente buena).
+
+*   **Ventajas:** Robustos, pueden encontrar soluciones buenas en espacios de búsqueda complejos, no requieren conocimiento específico del problema (más allá de la función de aptitud).
+*   **Desventajas:** Pueden ser computacionalmente costosos, la convergencia puede ser lenta, la elección de los parámetros (tamaño de la población, probabilidad de cruce, probabilidad de mutación) puede ser difícil.
+*   **Ejemplo:** Optimización de rutas para vehículos de entrega, diseño de antenas, entrenamiento de redes neuronales, planificación de horarios.
+
+**Casos de Aplicación Relevantes**
+
+*   **Planificación de Rutas (GPS):** A* es ampliamente utilizado para encontrar la ruta más rápida o más corta entre dos puntos.
+*   **Juegos:**  Algoritmos de búsqueda se utilizan para que los personajes no jugadores (NPCs) tomen decisiones inteligentes.  A* se puede usar para encontrar el camino hacia el jugador, y los algoritmos genéticos se pueden usar para aprender estrategias óptimas.
+*   **Robótica:**  Planificación de movimientos para robots, navegación autónoma.
+*   **Logística:**  Optimización de la cadena de suministro, planificación de la distribución.
+*   **Bioinformática:**  Alineamiento de secuencias de ADN, predicción de la estructura de proteínas.
+*   **Finanzas:**  Optimización de carteras de inversión, detección de fraudes.
+
+**Conclusión**
+
+Los algoritmos de búsqueda son herramientas esenciales en la IA.  La elección del algoritmo adecuado depende de las características del problema, como el tamaño del espacio de búsqueda, la disponibilidad de información heurística y los requisitos de optimalidad y eficiencia.  Comprender las fortalezas y debilidades de cada algoritmo es crucial para resolver problemas complejos de manera efectiva.
+
+**Ejercicios Propuestos**
+
+1.  Implementa el algoritmo A* para resolver el problema del laberinto.
+2.  Compara el rendimiento de BFS y DFS en un grafo pequeño.
+3.  Diseña una función de aptitud para un algoritmo genético que resuelva el problema del viajante de comercio (TSP).
+4.  Investiga y describe un caso de aplicación real de algoritmos genéticos en tu campo de interés.
+
+Espero que estas notas de clase sean útiles. ¡Mucho éxito en tu curso!

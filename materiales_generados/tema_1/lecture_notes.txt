@@ -1,0 +1,107 @@
+## Notas de Clase: Introducción a la Inteligencia Artificial
+
+**Curso:** Introducción a la Inteligencia Artificial
+**Código:** [Por favor, complete con el código del curso]
+**Descripción:** Este curso introductorio cubre los conceptos básicos de la Inteligencia Artificial, incluyendo algoritmos de búsqueda, aprendizaje automático y procesamiento del lenguaje natural. Los estudiantes desarrollarán habilidades prácticas mediante proyectos aplicados.
+
+**Tema:** Introducción a la IA
+
+**Objetivo:** Proporcionar una comprensión general de la Inteligencia Artificial, incluyendo su historia, los conceptos fundamentales de agentes inteligentes, entornos y tareas, así como las consideraciones éticas importantes.
+
+**Contenido:**
+
+**1. ¿Qué es la Inteligencia Artificial?**
+
+*   **Definición:** La Inteligencia Artificial (IA) es la capacidad de una máquina para imitar las funciones cognitivas humanas, como el aprendizaje, el razonamiento, la resolución de problemas, la percepción y el lenguaje natural.
+*   **Enfoques:**
+    *   **Pensar como humanos:** Intentar modelar los procesos de pensamiento humano. (Ejemplo: Sistemas expertos que imitan el razonamiento de un médico).
+    *   **Actuar como humanos:** Intentar que las máquinas actúen de manera indistinguible de los humanos. (Ejemplo: Test de Turing).
+    *   **Pensar racionalmente:** Intentar modelar el pensamiento lógico y correcto. (Ejemplo: Sistemas de razonamiento lógico).
+    *   **Actuar racionalmente:** Intentar diseñar agentes que actúen para lograr sus objetivos de la mejor manera posible. (Ejemplo: Robots que optimizan la eficiencia en una fábrica).
+*   **Ejemplos de IA en la vida cotidiana:**
+    *   Asistentes virtuales (Siri, Alexa, Google Assistant)
+    *   Recomendaciones de productos en línea (Amazon, Netflix)
+    *   Filtros de spam en el correo electrónico
+    *   Sistemas de navegación (Google Maps, Waze)
+    *   Vehículos autónomos (Tesla, Waymo)
+
+**2. Historia de la IA**
+
+*   **Inicios (1940s-1950s):**
+    *   **1943:** Warren McCulloch y Walter Pitts proponen un modelo matemático de neuronas artificiales.
+    *   **1950:** Alan Turing publica "Computing Machinery and Intelligence," proponiendo el Test de Turing.
+    *   **1956:** La Conferencia de Dartmouth marca el nacimiento oficial de la IA como campo de estudio.
+*   **Primeros Años (1950s-1960s):**
+    *   Se desarrollan programas que resuelven problemas algebraicos y juegan damas.
+    *   El optimismo es alto, pero las limitaciones de hardware y la complejidad de los problemas reales pronto se hacen evidentes.
+*   **Primer Invierno de la IA (1970s):**
+    *   La financiación para la investigación en IA disminuye drásticamente debido a la falta de progreso tangible.
+    *   Se identifican problemas fundamentales como la complejidad computacional y la falta de conocimiento de sentido común.
+*   **Sistemas Expertos (1980s):**
+    *   Resurgimiento de la IA con el desarrollo de sistemas expertos que imitan el razonamiento de expertos humanos en dominios específicos.
+    *   Ejemplo: MYCIN (diagnóstico de infecciones bacterianas).
+*   **Segundo Invierno de la IA (Finales de 1980s - Principios de 1990s):**
+    *   Los sistemas expertos resultan costosos de mantener y escalar.
+    *   La financiación vuelve a disminuir.
+*   **Resurgimiento del Aprendizaje Automático (1990s - Presente):**
+    *   Avances en hardware, disponibilidad de grandes conjuntos de datos y nuevos algoritmos de aprendizaje automático (especialmente redes neuronales) impulsan un nuevo auge de la IA.
+    *   Aplicaciones exitosas en reconocimiento de voz, visión por computadora, procesamiento del lenguaje natural, etc.
+*   **IA Moderna (Presente):**
+    *   Dominio del aprendizaje profundo (Deep Learning) en muchas áreas.
+    *   Énfasis en la ética, la transparencia y la responsabilidad en el desarrollo y la implementación de la IA.
+
+**3. Agentes Inteligentes**
+
+*   **Definición:** Un agente inteligente es una entidad que percibe su entorno a través de sensores y actúa sobre ese entorno a través de actuadores.
+*   **Arquitectura de un Agente:**
+    *   **Sensores:** Dispositivos que permiten al agente percibir el entorno. (Ejemplo: Cámara, micrófono, sensor de temperatura).
+    *   **Actuadores:** Dispositivos que permiten al agente actuar sobre el entorno. (Ejemplo: Motor, brazo robótico, altavoz).
+    *   **Programa del Agente:** La función que mapea las percepciones a las acciones.  Esta función puede ser simple (reglas predefinidas) o compleja (algoritmos de aprendizaje automático).
+*   **Tipos de Agentes:**
+    *   **Agente Reflejo Simple:** Basado en reglas "si-entonces".
+    *   **Agente Basado en Modelo:** Mantiene un modelo interno del mundo para tomar decisiones.
+    *   **Agente Basado en Objetivos:** Intenta alcanzar un objetivo específico.
+    *   **Agente Basado en Utilidad:** Intenta maximizar una función de utilidad que representa sus preferencias.
+    *   **Agente de Aprendizaje:** Aprende de la experiencia para mejorar su rendimiento.
+*   **Ejemplo:** Un robot aspiradora.
+    *   **Sensores:** Sensores de proximidad, sensor de suciedad.
+    *   **Actuadores:** Motor de ruedas, cepillo, aspiradora.
+    *   **Programa del Agente:** Puede ser un simple programa que siga un patrón predefinido o un programa más complejo que aprenda a optimizar la limpieza basada en la suciedad detectada.
+
+**4. Entornos y Tareas**
+
+*   **Entorno:** El mundo en el que opera el agente.
+*   **Tarea:** El objetivo que el agente debe lograr en el entorno.
+*   **Características de los Entornos:**
+    *   **Accesibilidad:** ¿El agente tiene acceso completo al estado del entorno? (Accesible vs. Inaccesible)
+    *   **Determinismo:** ¿La siguiente acción del agente determina completamente el siguiente estado del entorno? (Determinista vs. No Determinista)
+    *   **Episódico:** ¿La experiencia del agente se divide en episodios independientes? (Episódico vs. No Episódico)
+    *   **Estático:** ¿El entorno cambia mientras el agente está pensando? (Estático vs. Dinámico)
+    *   **Discreto:** ¿El número de acciones y percepciones posibles es finito? (Discreto vs. Continuo)
+*   **Diseño de Tareas:**
+    *   **Definir el objetivo:** ¿Qué debe lograr el agente?
+    *   **Especificar el entorno:** ¿Cuáles son las características del entorno?
+    *   **Evaluar el rendimiento:** ¿Cómo se mide el éxito del agente?
+*   **Ejemplo:** Un agente que juega al ajedrez.
+    *   **Entorno:** El tablero de ajedrez.
+    *   **Tarea:** Ganar la partida.
+    *   **Características del entorno:** Accesible, determinista, no episódico, estático (durante el turno del agente), discreto.
+
+**5. Ética en la IA**
+
+*   **Importancia:** A medida que la IA se vuelve más poderosa y omnipresente, es crucial considerar las implicaciones éticas de su desarrollo y uso.
+*   **Consideraciones Éticas Clave:**
+    *   **Sesgo:** Los algoritmos de IA pueden perpetuar y amplificar los sesgos presentes en los datos de entrenamiento. (Ejemplo: Sistemas de reconocimiento facial que funcionan peor para personas de color).
+    *   **Transparencia:** Es importante comprender cómo toman decisiones los sistemas de IA para poder identificar y corregir errores y sesgos. (Explicabilidad de la IA - XAI).
+    *   **Responsabilidad:** ¿Quién es responsable cuando un sistema de IA comete un error? (Ejemplo: Un vehículo autónomo que causa un accidente).
+    *   **Privacidad:** La recopilación y el uso de datos personales por parte de los sistemas de IA plantean importantes problemas de privacidad.
+    *   **Automatización del Empleo:** La IA puede automatizar muchos trabajos, lo que podría tener un impacto significativo en el empleo y la desigualdad económica.
+    *   **Armas Autónomas:** El desarrollo de armas autónomas plantea serias preocupaciones éticas sobre la autonomía, la responsabilidad y el potencial de escalada de conflictos.
+*   **Marcos Éticos:**
+    *   **Principios de la IA de la OCDE:** Promueven una IA responsable, centrada en el ser humano y sostenible.
+    *   **Declaración de Montreal para un Desarrollo Responsable de la Inteligencia Artificial:** Aboga por la protección de los derechos humanos y la promoción de la justicia social en el desarrollo y el uso de la IA.
+*   **Caso de Aplicación:**  Considerar el uso de la IA en la selección de candidatos para un empleo.  ¿Cómo se asegura que el sistema no discrimine por raza, género o edad? ¿Cómo se garantiza la transparencia del proceso de selección?
+
+**Conclusión:**
+
+La Inteligencia Artificial es un campo en constante evolución con un enorme potencial para transformar la sociedad. Sin embargo, es crucial abordar las consideraciones éticas y garantizar que la IA se desarrolle y utilice de manera responsable y beneficiosa para todos. El estudio de la IA requiere comprender su historia, sus fundamentos teóricos y prácticos, y las implicaciones éticas de su aplicación.

@@ -1,0 +1,54 @@
+¡Absolutamente! Aquí tienes una propuesta de objetivos de aprendizaje SMART para el tema de Machine Learning Básico, considerando los subtemas de Regresión Lineal, Árboles de Decisión y Clustering, y alineados con los objetivos generales del curso:
+
+**Tema: Machine Learning Básico**
+
+**Objetivos Generales del Curso (Recordatorio):**
+
+*   Comprender los fundamentos teóricos de la IA.
+*   Aplicar algoritmos de búsqueda y optimización.
+*   Desarrollar modelos básicos de machine learning.
+*   Analizar casos de estudio de aplicaciones reales.
+*   Implementar soluciones simples de PLN.
+
+**Objetivos de Aprendizaje Específicos (SMART):**
+
+**1. Regresión Lineal:**
+
+*   **Conocimiento (Recordar):**
+    *   **Objetivo:** En la semana 1, los estudiantes **definirán** los conceptos clave de la regresión lineal (variables dependientes e independientes, coeficiente de correlación, error cuadrático medio) con una precisión del 90% en un cuestionario.
+*   **Comprensión (Entender):**
+    *   **Objetivo:** Al finalizar la semana 1, los estudiantes **explicarán** el principio de mínimos cuadrados y su aplicación para encontrar la mejor línea de ajuste en un conjunto de datos, demostrando su comprensión mediante la resolución de un problema práctico con un error menor al 5%.
+*   **Aplicación (Aplicar):**
+    *   **Objetivo:** En la semana 2, los estudiantes **aplicarán** un algoritmo de regresión lineal simple utilizando una biblioteca de Python (por ejemplo, scikit-learn) para predecir valores en un conjunto de datos dado, obteniendo una métrica R-cuadrado superior a 0.7.
+*   **Análisis (Analizar):**
+    *   **Objetivo:** Al finalizar la semana 2, los estudiantes **compararán** y **contrastarán** los resultados de un modelo de regresión lineal con diferentes conjuntos de características (features), identificando las variables más influyentes en la predicción y justificando sus conclusiones en un informe escrito.
+
+**2. Árboles de Decisión:**
+
+*   **Conocimiento (Recordar):**
+    *   **Objetivo:** En la semana 3, los estudiantes **identificarán** los componentes principales de un árbol de decisión (nodos, ramas, hojas, raíz) y los diferentes algoritmos de división (e.g., ID3, C4.5, CART) en un examen corto con una precisión del 85%.
+*   **Comprensión (Entender):**
+    *   **Objetivo:** Al finalizar la semana 3, los estudiantes **describirán** el proceso de construcción de un árbol de decisión, incluyendo la selección de atributos basada en medidas de impureza (e.g., entropía, índice de Gini), en una presentación oral de 5 minutos.
+*   **Aplicación (Aplicar):**
+    *   **Objetivo:** En la semana 4, los estudiantes **construirán** un modelo de árbol de decisión utilizando una biblioteca de Python para clasificar datos, logrando una precisión superior al 75% en un conjunto de datos de prueba.
+*   **Análisis (Analizar):**
+    *   **Objetivo:** Al finalizar la semana 4, los estudiantes **evaluarán** el impacto de la profundidad del árbol y otros hiperparámetros en el rendimiento del modelo, presentando sus hallazgos y recomendaciones para optimizar el modelo en un informe técnico.
+
+**3. Clustering:**
+
+*   **Conocimiento (Recordar):**
+    *   **Objetivo:** En la semana 5, los estudiantes **enumerarán** los diferentes tipos de algoritmos de clustering (e.g., K-means, clustering jerárquico, DBSCAN) y sus principales características en una tabla comparativa.
+*   **Comprensión (Entender):**
+    *   **Objetivo:** Al finalizar la semana 5, los estudiantes **explicarán** el funcionamiento del algoritmo K-means, incluyendo la inicialización de centroides, la asignación de puntos a clusters y la actualización de centroides, en una discusión grupal.
+*   **Aplicación (Aplicar):**
+    *   **Objetivo:** En la semana 6, los estudiantes **implementarán** el algoritmo K-means utilizando una biblioteca de Python para agrupar datos no etiquetados, visualizando los resultados y evaluando la calidad del clustering utilizando métricas como el índice de silueta.
+*   **Evaluación (Evaluar):**
+    *   **Objetivo:** Al finalizar la semana 6, los estudiantes **justificarán** la elección de un algoritmo de clustering específico para un problema dado, considerando las características de los datos y los objetivos del análisis, en un estudio de caso escrito.
+
+**Consideraciones Adicionales:**
+
+*   **Adaptación:** Estos objetivos son un punto de partida. Ajústalos según las necesidades específicas de tus estudiantes y el nivel de profundidad que deseas alcanzar.
+*   **Evaluación Continua:** Utiliza una variedad de métodos de evaluación (cuestionarios, proyectos, presentaciones, informes) para medir el progreso de los estudiantes en relación con los objetivos de aprendizaje.
+*   **Retroalimentación:** Proporciona retroalimentación regular a los estudiantes para ayudarles a mejorar su comprensión y habilidades.
+
+Espero que esto te sea de gran utilidad. ¡No dudes en preguntar si necesitas más detalles o modificaciones!

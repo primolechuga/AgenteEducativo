@@ -1,0 +1,191 @@
+¡Excelente! Aquí tienes un conjunto de problemas de práctica sobre Machine Learning Básico, cubriendo Regresión Lineal, Árboles de Decisión y Clustering, con diferentes niveles de dificultad y soluciones paso a paso.
+
+**Curso:** Machine Learning Básico
+
+**Tema:** Regresión Lineal, Árboles de Decisión, Clustering
+
+---
+
+**I. Regresión Lineal**
+
+**Problema 1 (Básico): Ajuste de una línea recta**
+
+*   **Enunciado:** Tienes los siguientes datos sobre el tamaño de una casa (en metros cuadrados) y su precio (en miles de dólares):
+
+    | Tamaño (m²) | Precio (miles $) |
+    |-------------|-------------------|
+    | 50          | 150               |
+    | 75          | 225               |
+    | 100         | 300               |
+    | 125         | 375               |
+    | 150         | 450               |
+
+    Ajusta un modelo de regresión lineal simple (y = mx + b) a estos datos para predecir el precio en función del tamaño. Calcula los coeficientes m (pendiente) y b (intercepto).
+
+*   **Solución:**
+
+    1.  **Calcular las medias:**
+        *   Media del tamaño (x̄): (50 + 75 + 100 + 125 + 150) / 5 = 100
+        *   Media del precio (ȳ): (150 + 225 + 300 + 375 + 450) / 5 = 300
+
+    2.  **Calcular la pendiente (m):**
+        *   m = Σ[(xi - x̄)(yi - ȳ)] / Σ[(xi - x̄)²]
+        *   Calculamos las diferencias y sus productos:
+            | Tamaño (xi) | Precio (yi) | xi - x̄ | yi - ȳ | (xi - x̄)(yi - ȳ) | (xi - x̄)² |
+            |-------------|-------------|--------|--------|---------------------|-----------|
+            | 50          | 150         | -50    | -150   | 7500                | 2500      |
+            | 75          | 225         | -25    | -75    | 1875                | 625       |
+            | 100         | 300         | 0      | 0      | 0                   | 0         |
+            | 125         | 375         | 25     | 75     | 1875                | 625       |
+            | 150         | 450         | 50     | 150    | 7500                | 2500      |
+            |             |             |        |        | **Σ = 18750**       | **Σ = 6250**|
+
+        *   m = 18750 / 6250 = 3
+
+    3.  **Calcular el intercepto (b):**
+        *   b = ȳ - m * x̄
+        *   b = 300 - 3 * 100 = 0
+
+    4.  **Ecuación de la regresión lineal:** y = 3x + 0  (o simplemente y = 3x)
+
+    **Respuesta:** La pendiente (m) es 3 y el intercepto (b) es 0.  La ecuación de la regresión lineal es y = 3x.  Por cada metro cuadrado adicional, el precio aumenta en 3 mil dólares.
+
+**Problema 2 (Intermedio): Evaluación del modelo de regresión lineal**
+
+*   **Enunciado:** Usando el modelo de regresión lineal del Problema 1 (y = 3x), calcula el Error Cuadrático Medio (MSE) para los datos originales.
+
+*   **Solución:**
+
+    1.  **Calcular las predicciones (ŷi):**
+        *   Para cada tamaño (xi), calcula la predicción ŷi = 3 * xi
+
+    2.  **Calcular los errores (ei):**
+        *   ei = yi - ŷi
+
+    3.  **Calcular los errores al cuadrado (ei²):**
+
+    4.  **Calcular el MSE:**
+        *   MSE = Σ(ei²) / n  (donde n es el número de datos)
+
+    | Tamaño (xi) | Precio (yi) | Predicción (ŷi) | Error (ei) | Error² (ei²) |
+    |-------------|-------------|-----------------|------------|-------------|
+    | 50          | 150         | 150             | 0          | 0           |
+    | 75          | 225         | 225             | 0          | 0           |
+    | 100         | 300         | 300             | 0          | 0           |
+    | 125         | 375         | 375             | 0          | 0           |
+    | 150         | 450         | 450             | 0          | 0           |
+    |             |             |                 |            | Σ = 0       |
+
+    *   MSE = 0 / 5 = 0
+
+    **Respuesta:** El Error Cuadrático Medio (MSE) es 0.  En este caso, el modelo se ajusta perfectamente a los datos.  (En la práctica, esto es raro, pero simplifica el cálculo).
+
+**Problema 3 (Avanzado): Regresión Lineal Múltiple con Regularización L1 (Lasso)**
+
+*   **Enunciado:** Tienes datos sobre el precio de una casa (en miles de dólares) en función de su tamaño (m²), número de habitaciones y antigüedad (años):
+
+    | Tamaño (m²) | Habitaciones | Antigüedad (años) | Precio (miles $) |
+    |-------------|-------------|-------------------|-------------------|
+    | 80          | 3           | 10                | 250               |
+    | 100         | 4           | 5                 | 320               |
+    | 120         | 3           | 15                | 300               |
+    | 140         | 5           | 2                 | 450               |
+    | 160         | 4           | 8                 | 400               |
+
+    Ajusta un modelo de regresión lineal múltiple con regularización L1 (Lasso) usando un software estadístico o biblioteca de Machine Learning (e.g., scikit-learn en Python).  Interpreta los coeficientes resultantes y explica cómo la regularización L1 afecta la selección de características.  Supón un valor de lambda (α) = 0.1 para la regularización L1.
+
+*   **Solución:**
+
+    1.  **Preparación de los datos:** Organizar los datos en una matriz X (características: tamaño, habitaciones, antigüedad) y un vector y (precio).
+
+    2.  **Usar un software/biblioteca (ejemplo en Python con scikit-learn):**
+
+        ```python
+        import numpy as np
+        from sklearn.linear_model import Lasso
+        from sklearn.preprocessing import StandardScaler
+
+        # Datos
+        X = np.array([[80, 3, 10], [100, 4, 5], [120, 3, 15], [140, 5, 2], [160, 4, 8]])
+        y = np.array([250, 320, 300, 450, 400])
+
+        # Escalar las características (importante para Lasso)
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(X)
+
+        # Crear y entrenar el modelo Lasso
+        alpha = 0.1  # Parámetro de regularización
+        lasso = Lasso(alpha=alpha)
+        lasso.fit(X_scaled, y)
+
+        # Coeficientes
+        print("Coeficientes:", lasso.coef_)
+        print("Intercepto:", lasso.intercept_)
+        ```
+
+    3.  **Interpretación de los coeficientes:**
+
+        *   El modelo Lasso produce coeficientes para cada característica (tamaño, habitaciones, antigüedad) y un intercepto.
+        *   **Importante:** Debido a la regularización L1, algunos coeficientes pueden ser exactamente cero.  Esto significa que la característica correspondiente ha sido efectivamente eliminada del modelo.  Lasso realiza selección de características.
+        *   En este ejemplo (hipotético, basado en la ejecución del código), supongamos que los coeficientes resultantes son:
+            *   Tamaño: 55.2
+            *   Habitaciones: 12.8
+            *   Antigüedad: -8.5
+            *   Intercepto: 340
+
+        *   **Interpretación:**
+            *   Por cada unidad de cambio en el tamaño (después de la estandarización), el precio cambia en 55.2 miles de dólares.
+            *   Por cada unidad de cambio en el número de habitaciones (después de la estandarización), el precio cambia en 12.8 miles de dólares.
+            *   Por cada unidad de cambio en la antigüedad (después de la estandarización), el precio cambia en -8.5 miles de dólares.  Esto sugiere que casas más antiguas tienden a tener precios más bajos.
+
+    4.  **Efecto de la Regularización L1:**
+
+        *   La regularización L1 penaliza la magnitud de los coeficientes.  Esto fuerza a algunos coeficientes a ser cero, eliminando las características menos importantes del modelo.
+        *   El valor de `alpha` (λ) controla la fuerza de la regularización.  Un valor más alto de `alpha` resulta en más coeficientes siendo cero, creando un modelo más simple.
+        *   En este contexto, la regularización L1 ayuda a identificar las características más relevantes para predecir el precio de la casa, simplificando el modelo y reduciendo el riesgo de overfitting.
+
+    **Respuesta:** La regularización L1 (Lasso) realiza selección de características al forzar algunos coeficientes a cero.  La interpretación de los coeficientes restantes debe considerar que las características fueron escaladas.  Un valor más alto de `alpha` (λ) en Lasso resulta en una mayor penalización y, potencialmente, más características eliminadas.
+
+---
+
+**II. Árboles de Decisión**
+
+**Problema 4 (Básico): Construcción manual de un árbol de decisión simple**
+
+*   **Enunciado:** Tienes los siguientes datos sobre si un cliente comprará o no un producto en función de su edad y sus ingresos:
+
+    | Edad   | Ingresos (miles $) | Compra |
+    |--------|----------------------|--------|
+    | 25     | 40                   | No     |
+    | 30     | 60                   | Sí     |
+    | 35     | 80                   | Sí     |
+    | 40     | 50                   | No     |
+    | 45     | 70                   | Sí     |
+
+    Construye manualmente un árbol de decisión simple (máximo 2 niveles) para predecir si un cliente comprará el producto.  Elige un atributo (edad o ingresos) para dividir en el primer nivel. Justifica tu elección.
+
+*   **Solución:**
+
+    1.  **Elegir el atributo para el primer nodo (raíz):**  Para simplificar, vamos a usar un umbral simple para cada atributo.  Podríamos usar ganancia de información o índice Gini para una elección más formal, pero aquí lo haremos de forma más intuitiva.
+
+        *   **Opción 1: Dividir por Edad:**  Podríamos dividir en Edad <= 32.5 (punto medio entre 30 y 35).
+        *   **Opción 2: Dividir por Ingresos:** Podríamos dividir en Ingresos <= 65 (punto medio entre 60 y 70).
+
+        Intuitivamente, los ingresos parecen tener una mejor correlación con la compra.  Clientes con ingresos más altos tienden a comprar.  Por lo tanto, elegiremos dividir por **Ingresos <= 65**.
+
+    2.  **Crear el primer nodo (raíz):**
+
+        ```
+        Ingresos <= 65?
+        /       \
+        Sí        No
+        ```
+
+    3.  **Crear los nodos hoja (segundo nivel):**
+
+        *   **Rama "Sí" (Ingresos <= 65):**  De los datos, tenemos:
+            *   Edad 25, Ingresos 40, Compra No
+            *   Edad 30, Ingresos 60, Compra Sí
+            *   Edad 40, Ingresos 50, Compra No
+
+            La mayoría es "No".  

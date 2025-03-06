@@ -1,0 +1,46 @@
+¡Excelente! Aquí tienes una propuesta de objetivos de aprendizaje SMART para el tema "Algoritmos de Búsqueda", considerando los subtemas que has especificado, los objetivos generales del curso y la taxonomía de Bloom:
+
+**Tema: Algoritmos de Búsqueda**
+
+**Objetivos Generales del Tema:**
+
+*   Comprender los principios y la mecánica de los algoritmos de búsqueda.
+*   Implementar algoritmos de búsqueda para la resolución de problemas.
+*   Evaluar el rendimiento de diferentes algoritmos de búsqueda.
+*   Aplicar algoritmos de búsqueda para resolver problemas del mundo real.
+
+**Objetivos de Aprendizaje Específicos (SMART):**
+
+**Subtema: Búsqueda No Informada**
+
+*   **Conocimiento:** *Definir* los conceptos clave de la búsqueda no informada (búsqueda en amplitud, búsqueda en profundidad, búsqueda de costo uniforme) y *enumerar* sus principales características y diferencias, en una evaluación escrita, con una precisión del 80% en la primera semana del tema.
+*   **Comprensión:** *Explicar* cómo funcionan los algoritmos de búsqueda no informada (BFS, DFS, UCS) y *contrastar* sus ventajas y desventajas en términos de completitud, optimalidad, complejidad temporal y espacial, en un foro de discusión en línea, con participaciones relevantes y fundamentadas, durante la primera semana del tema.
+*   **Aplicación:** *Implementar* en Python un algoritmo de búsqueda en amplitud (BFS) para resolver el problema del laberinto, garantizando una solución correcta y eficiente en un entorno de pruebas predefinido, en la segunda semana del tema.
+
+**Subtema: Búsqueda Heurística**
+
+*   **Conocimiento:** *Definir* el concepto de heurística y su rol en los algoritmos de búsqueda informada, *identificando* ejemplos de heurísticas admisibles y no admisibles para problemas específicos, en una prueba corta, con una precisión del 75% en la segunda semana del tema.
+*   **Comprensión:** *Distinguir* entre diferentes estrategias de búsqueda heurística (búsqueda voraz, A*) y *explicar* cómo la función heurística influye en la eficiencia de la búsqueda, en un informe escrito, justificando las elecciones de heurística para problemas específicos, en la tercera semana del tema.
+*   **Aplicación:** *Aplicar* el algoritmo de búsqueda voraz para resolver el problema del agente viajero (TSP) con un conjunto de datos proporcionado, demostrando una comprensión práctica de cómo la heurística guía la búsqueda, en la tercera semana del tema.
+
+**Subtema: Algoritmo A***
+
+*   **Conocimiento:** *Definir* formalmente el algoritmo A* y *describir* la función de evaluación f(n) = g(n) + h(n), explicando el significado de cada componente, en una presentación oral, con claridad y precisión, en la cuarta semana del tema.
+*   **Comprensión:** *Demostrar* por qué A* es completo y óptimo si la heurística es admisible y consistente, *analizando* ejemplos y contraejemplos, en un trabajo escrito, con argumentos lógicos y bien fundamentados, en la cuarta semana del tema.
+*   **Análisis:** *Comparar* el rendimiento del algoritmo A* con diferentes heurísticas en un problema de planificación de rutas, *analizando* el impacto de la precisión de la heurística en el tiempo de búsqueda y la calidad de la solución, en un proyecto de laboratorio, en la quinta semana del tema.
+*   **Aplicación:** *Implementar* el algoritmo A* en Python para resolver el problema del puzzle de 8, *utilizando* una heurística adecuada (e.g., distancia de Manhattan) y *evaluando* su rendimiento en diferentes configuraciones iniciales, en la quinta semana del tema.
+
+**Subtema: Optimización con Algoritmos Genéticos**
+
+*   **Conocimiento:** *Definir* los conceptos clave de los algoritmos genéticos (población, cromosoma, función de aptitud, selección, cruce, mutación) y *describir* el ciclo de vida de un algoritmo genético, en un glosario de términos, con definiciones claras y concisas, en la sexta semana del tema.
+*   **Comprensión:** *Explicar* cómo los algoritmos genéticos pueden ser utilizados para resolver problemas de optimización, *ilustrando* con ejemplos de problemas donde los algoritmos genéticos son especialmente efectivos, en un video explicativo, con ejemplos visuales y narración clara, en la sexta semana del tema.
+*   **Aplicación:** *Implementar* un algoritmo genético en Python para resolver un problema de optimización (e.g., optimización de una función matemática, selección de características en machine learning), *ajustando* los parámetros del algoritmo (tamaño de la población, probabilidad de cruce, probabilidad de mutación) para obtener buenos resultados, en un proyecto final, en la séptima semana del tema.
+*   **Evaluación:** *Evaluar* el rendimiento de un algoritmo genético implementado para un problema de optimización específico, *comparando* los resultados con otros métodos de optimización (e.g., búsqueda aleatoria, descenso del gradiente), y *justificando* la elección del algoritmo genético en función de sus ventajas y desventajas, en el informe final del proyecto, en la séptima semana del tema.
+
+**Consideraciones Adicionales:**
+
+*   **Evaluación Continua:** Incorporar evaluaciones formativas a lo largo del tema (e.g., cuestionarios cortos, ejercicios de codificación en clase) para asegurar la comprensión de los conceptos.
+*   **Retroalimentación:** Proporcionar retroalimentación oportuna y constructiva a los estudiantes sobre su desempeño en las diferentes actividades.
+*   **Adaptación:** Ajustar los objetivos de aprendizaje y las actividades en función de las necesidades y el progreso de los estudiantes.
+
+Espero que estos objetivos de aprendizaje te sean de gran utilidad. ¡Éxito en tu curso!

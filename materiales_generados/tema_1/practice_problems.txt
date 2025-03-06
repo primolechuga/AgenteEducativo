@@ -1,0 +1,125 @@
+¡Excelente! Aquí tienes un conjunto de problemas de práctica para una introducción a la IA, cubriendo historia, agentes, entornos, tareas y ética, con diferentes niveles de dificultad y soluciones paso a paso.
+
+**Curso:** Introducción a la Inteligencia Artificial
+
+**Tema:** Introducción a la IA (Historia, Agentes Inteligentes, Entornos y Tareas, Ética en IA)
+
+**Problemas de Práctica:**
+
+**1. Historia de la IA (Nivel Básico)**
+
+*   **Problema:** Enumera tres eventos o figuras clave en la historia temprana de la IA (antes de 1980) y explica brevemente su contribución.
+
+*   **Solución:**
+
+    *   **Alan Turing (1950):**  Publicó el artículo "Computing Machinery and Intelligence", proponiendo el "Test de Turing" como criterio para determinar si una máquina puede "pensar".  Su trabajo sentó las bases teóricas para la IA.
+    *   **Dartmouth Workshop (1956):**  Considerado el evento fundacional de la IA como campo de estudio.  Reunió a investigadores clave como John McCarthy, Marvin Minsky, Nathaniel Rochester y Claude Shannon, quienes acuñaron el término "Inteligencia Artificial".
+    *   **ELIZA (Joseph Weizenbaum, 1966):** Un programa de procesamiento del lenguaje natural capaz de simular una conversación.  Aunque simple, demostró el potencial de la interacción hombre-máquina y generó debate sobre la comprensión real vs. la simulación.
+
+**2. Agentes Inteligentes (Nivel Intermedio)**
+
+*   **Problema:**  Describe los cuatro tipos básicos de agentes (simple reflex, model-based reflex, goal-based, utility-based) y da un ejemplo de un agente del mundo real que se ajuste a cada categoría.
+
+*   **Solución:**
+
+    *   **Agente Simple Reflex:**  Actúa basándose únicamente en la percepción actual. No tiene memoria ni representación del pasado.  **Ejemplo:** Un termostato que enciende o apaga la calefacción dependiendo de la temperatura actual.
+    *   **Agente Reflex Basado en Modelo:**  Mantiene un estado interno que representa el mundo y cómo evoluciona.  Utiliza este modelo, junto con la percepción actual, para tomar decisiones. **Ejemplo:** Un robot aspiradora que mapea una habitación y recuerda las áreas que ya ha limpiado.
+    *   **Agente Basado en Objetivos:**  Además de un modelo del mundo, tiene un objetivo que intenta alcanzar.  Las acciones se eligen en función de qué tan cerca están de lograr el objetivo. **Ejemplo:** Un sistema de navegación GPS que calcula la ruta más corta a un destino específico.
+    *   **Agente Basado en Utilidad:**  Similar al agente basado en objetivos, pero tiene una función de utilidad que mide la felicidad o satisfacción de alcanzar diferentes estados.  Elige la acción que maximiza la utilidad esperada. **Ejemplo:** Un agente de negociación que intenta obtener el mejor precio posible al vender un producto, considerando factores como el tiempo, el riesgo y la satisfacción del cliente.
+
+**3. Entornos y Tareas (Nivel Intermedio)**
+
+*   **Problema:**  Considera un agente que juega al ajedrez. Describe el entorno del ajedrez utilizando los siguientes atributos:
+
+    *   Totalmente observable vs. parcialmente observable
+    *   Determinista vs. estocástico
+    *   Episódico vs. secuencial
+    *   Estático vs. dinámico
+    *   Discreto vs. continuo
+
+*   **Solución:**
+
+    *   **Totalmente observable:**  El estado completo del tablero es visible para ambos jugadores.
+    *   **Determinista:**  Cada acción (movimiento) tiene un resultado predecible.  No hay azar involucrado.
+    *   **Secuencial:**  La secuencia de acciones importa.  Cada movimiento afecta el estado futuro del juego.
+    *   **Estático:**  El entorno no cambia mientras el agente está "pensando" en su próximo movimiento.  (Asumiendo que es un juego por turnos).
+    *   **Discreto:**  Hay un número finito de posibles movimientos y estados del tablero.
+
+**4. Ética en IA (Nivel Avanzado)**
+
+*   **Problema:**  Discute las implicaciones éticas del uso de algoritmos de aprendizaje automático en la contratación de personal.  Considera posibles sesgos, transparencia y responsabilidad.
+
+*   **Solución:**
+
+    *   **Sesgos:** Los algoritmos de aprendizaje automático se entrenan con datos históricos. Si estos datos reflejan sesgos existentes (por ejemplo, subrepresentación de ciertos grupos demográficos en roles de liderazgo), el algoritmo puede perpetuar o incluso amplificar estos sesgos al seleccionar candidatos.
+    *   **Transparencia:**  Muchos algoritmos de aprendizaje automático, especialmente las redes neuronales profundas, son "cajas negras".  Es difícil entender por qué tomaron una decisión particular, lo que dificulta identificar y corregir sesgos.  La falta de transparencia también puede socavar la confianza en el proceso de contratación.
+    *   **Responsabilidad:**  Si un algoritmo discrimina injustamente a un candidato, ¿quién es responsable?  ¿El desarrollador del algoritmo, la empresa que lo utiliza, o el propio algoritmo?  Establecer líneas claras de responsabilidad es crucial.
+    *   **Mitigación:**  Para abordar estas preocupaciones, es importante:
+        *   Utilizar conjuntos de datos de entrenamiento diversos y representativos.
+        *   Auditar los algoritmos en busca de sesgos y tomar medidas correctivas.
+        *   Priorizar la transparencia y la explicabilidad siempre que sea posible.
+        *   Establecer mecanismos para la revisión humana de las decisiones tomadas por los algoritmos.
+        *   Desarrollar marcos éticos y legales para regular el uso de la IA en la contratación.
+
+**5. Agentes Inteligentes (Nivel Avanzado - Diseño)**
+
+*   **Problema:** Diseña la arquitectura de un agente inteligente para un vehículo autónomo. Describe los sensores que utilizaría, los componentes de procesamiento (percepción, planificación, control) y cómo interactuarían entre sí.  Considera los desafíos de la incertidumbre y el tiempo real.
+
+*   **Solución:**
+
+    *   **Sensores:**
+        *   **Cámaras:**  Para la detección de objetos (peatones, vehículos, señales de tráfico), reconocimiento de carriles y detección de semáforos.
+        *   **LiDAR (Light Detection and Ranging):**  Para crear un mapa 3D detallado del entorno, proporcionando información precisa sobre la distancia y la forma de los objetos.
+        *   **Radar:**  Para la detección de objetos a larga distancia, especialmente en condiciones climáticas adversas (niebla, lluvia).
+        *   **GPS/IMU (Unidad de Medición Inercial):**  Para la localización precisa del vehículo y la estimación de su orientación y velocidad.
+
+    *   **Componentes de Procesamiento:**
+        *   **Percepción:**
+            *   **Procesamiento de Imágenes/Video:**  Utiliza algoritmos de visión artificial (redes neuronales convolucionales) para identificar y clasificar objetos en las imágenes de las cámaras.
+            *   **Fusión de Sensores:**  Combina los datos de múltiples sensores para crear una representación más robusta y precisa del entorno.  Por ejemplo, fusionar datos de LiDAR y cámaras para obtener una detección de objetos más confiable.
+        *   **Planificación:**
+            *   **Planificación de Rutas:**  Calcula la ruta óptima al destino, considerando factores como el tráfico, las restricciones de velocidad y las preferencias del usuario.
+            *   **Planificación de Movimiento:**  Genera una trayectoria segura y suave que el vehículo debe seguir, evitando obstáculos y respetando las reglas de tráfico.  Utiliza algoritmos de búsqueda como A* o algoritmos basados en muestreo como RRT.
+        *   **Control:**
+            *   **Control de Bajo Nivel:**  Ajusta la dirección, la aceleración y el frenado del vehículo para seguir la trayectoria planificada.  Utiliza controladores PID o modelos predictivos.
+
+    *   **Interacción:**
+        *   Los datos de los sensores se envían al módulo de percepción.
+        *   El módulo de percepción crea una representación del entorno (un "mapa") y la envía al módulo de planificación.
+        *   El módulo de planificación genera una trayectoria y la envía al módulo de control.
+        *   El módulo de control ejecuta la trayectoria, controlando los actuadores del vehículo.
+        *   Este proceso se repite continuamente en un bucle de retroalimentación.
+
+    *   **Desafíos:**
+        *   **Incertidumbre:**  Los datos de los sensores son ruidosos e incompletos.  El sistema debe ser robusto ante la incertidumbre y capaz de manejar situaciones inesperadas.  Se pueden utilizar técnicas probabilísticas como filtros de Kalman o filtros de partículas para estimar el estado del entorno.
+        *   **Tiempo Real:**  El sistema debe tomar decisiones rápidas y precisas en tiempo real.  La eficiencia computacional es crucial.  Se pueden utilizar técnicas de optimización y hardware especializado (GPUs) para acelerar el procesamiento.
+
+**6. Ética en IA (Nivel Avanzado - Caso de Estudio)**
+
+*   **Problema:** Analiza el dilema del "problema del tranvía" en el contexto de los vehículos autónomos.  Si un vehículo autónomo se encuentra en una situación en la que debe elegir entre salvar a sus pasajeros sacrificando a un peatón, o salvar al peatón sacrificando a sus pasajeros, ¿qué debería hacer?  Discute diferentes enfoques éticos (utilitarismo, deontología) y los desafíos de programar la moralidad en las máquinas.
+
+*   **Solución:**
+
+    *   **El Problema del Tranvía:** Este es un experimento mental clásico en ética. Un tranvía fuera de control se dirige hacia cinco personas atadas a la vía. Puedes accionar una palanca para desviarlo a otra vía, donde hay una sola persona atada. ¿Deberías accionar la palanca, salvando a cinco personas a costa de la vida de una?
+
+    *   **En el Contexto de Vehículos Autónomos:**  Imagina un vehículo autónomo que no puede evitar un accidente.  Debe elegir entre:
+        *   Opción A: Desviarse, matando a un peatón.
+        *   Opción B: Seguir recto, matando a sus pasajeros.
+
+    *   **Enfoques Éticos:**
+        *   **Utilitarismo:**  Maximizar la felicidad general.  En este caso, salvar la mayor cantidad de vidas posible.  El vehículo debería elegir la opción que resulte en el menor número de muertes.  (En el ejemplo, sacrificar al peatón para salvar a los pasajeros, o viceversa, si hay más pasajeros que peatones).
+        *   **Deontología:**  Seguir reglas morales fijas, independientemente de las consecuencias.  Por ejemplo, "nunca dañar intencionalmente a un ser humano".  Esto podría significar que el vehículo no debería tomar ninguna acción deliberada para causar daño, incluso si eso significa que más personas mueren.  (En el ejemplo, el vehículo podría simplemente seguir su curso, sin intentar desviarse).
+
+    *   **Desafíos de Programar la Moralidad:**
+        *   **Subjetividad:**  Los valores morales varían entre culturas e individuos.  ¿Qué conjunto de valores debería programarse en los vehículos autónomos?
+        *   **Complejidad:**  Las situaciones del mundo real son complejas y pueden involucrar múltiples factores difíciles de cuantificar.  ¿Cómo debería el vehículo sopesar diferentes valores en un escenario de toma de decisiones en tiempo real?
+        *   **Responsabilidad:**  ¿Quién es responsable de las decisiones tomadas por el vehículo?  ¿El programador, el fabricante, el propietario o el propio vehículo?
+        *   **Aprobación Pública:**  Es probable que haya un debate público intenso sobre cómo deberían programarse los vehículos autónomos para tomar decisiones morales.  Es importante involucrar al público en este debate.
+
+    *   **Posibles Soluciones:**
+        *   **Transparencia:**  Hacer que el proceso de toma de decisiones del vehículo sea lo más transparente posible.
+        *   **Regulación:**  Establecer regulaciones claras sobre cómo deberían programarse los vehículos autónomos para tomar decisiones morales.
+        *   **Elección del Usuario:**  Permitir a los usuarios personalizar la configuración ética de sus vehículos (dentro de los límites de la ley).
+        *   **Simulación y Pruebas:**  Realizar simulaciones exhaustivas y pruebas en el mundo real para evaluar el comportamiento de los vehículos autónomos en una variedad de situaciones.
+
+Estos problemas de práctica te proporcionarán una base sólida para comprender los conceptos fundamentales de la IA. ¡Mucha suerte con tu curso!
